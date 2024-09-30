@@ -1,22 +1,36 @@
 # code-3
-
 #include<bits/stdc++.h>
 using namespace std;
 
-int main()
-{
-  int n; 
-  cin>>n;     
-  int a = 1;
-  int b = 1;
-  int curr;
-  if(n==1 || n==2){
-        curr =1;
-  }
-  for (int i = 3; i <= n; i += 1) {
-        curr = a + b;
-        a = b;
-        b = curr;
-  }
-  cout<<curr<<"\n";
-}       
+int dataTypeSize(string str) {
+        
+        cin>>str;
+        
+        if(str == "Character"){
+            return 1;
+        }
+        if(str == "Integer"){
+            return 4;
+        }
+        if(str == "Long"){
+            return 8;
+        }
+        if(str == "Float"){
+            return 4;
+        }
+        if(str == "Double"){
+            return 8;
+        }
+    }
+};
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        string str;
+        cin >> str;
+        Solution ob;
+        cout << ob.dataTypeSize(str);
+        cout << "\n";
+    }
+    return 0;
